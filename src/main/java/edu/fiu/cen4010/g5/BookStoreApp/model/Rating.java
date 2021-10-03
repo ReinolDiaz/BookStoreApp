@@ -10,9 +10,9 @@ public class Rating {
     @Id
     private String id;
     @Field("userid")
-    private String userId;
+    private String userid;
     @Field("bookid")
-    private String bookId;
+    private String bookid;
     @Field("value")
     private int value;
     @Field("date")
@@ -20,9 +20,9 @@ public class Rating {
     @Field("comment")
     private String comment;
 
-    public Rating(String userId, String bookId, int value, String date, String comment) {
-        this.userId = userId;
-        this.bookId = bookId;
+    public Rating(String userid, String bookid, int value, String date, String comment) {
+        this.userid = userid;
+        this.bookid = bookid;
         this.value = value;
         this.date = date;
         this.comment = comment;
@@ -36,20 +36,20 @@ public class Rating {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
-    public String getBookId() {
-        return bookId;
+    public String getBookid() {
+        return bookid;
     }
 
-    public void setBookId(String bookId) {
-        this.bookId = bookId;
+    public void setBookid(String bookid) {
+        this.bookid = bookid;
     }
 
     public int getValue() {

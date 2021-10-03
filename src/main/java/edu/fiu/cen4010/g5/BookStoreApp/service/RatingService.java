@@ -20,13 +20,13 @@ public class RatingService {
     }
 
     public void updateRating(Rating rating) {
-        Rating savedRating = ratingRepository.findByUserIdAndBookId(rating.getUserId(), rating.getBookId())
+        Rating savedRating = ratingRepository.findByUserIdAndBookId(rating.getUserid(), rating.getBookid())
                 .orElseThrow(() -> new RuntimeException(
-                        String.format("Cannot Find Rating for Book ID %s by User ID %s", rating.getBookId(), rating.getUserId())
+                        String.format("Cannot Find Rating for Book ID %s by User ID %s", rating.getBookid(), rating.getUserid())
                 ));
 
-        savedRating.setUserId(rating.getUserId());
-        savedRating.setBookId(rating.getBookId());
+        savedRating.setUserid(rating.getUserid());
+        savedRating.setBookid(rating.getBookid());
         savedRating.setDate(rating.getDate());
         savedRating.setValue(rating.getValue());
         savedRating.setComment(rating.getComment());

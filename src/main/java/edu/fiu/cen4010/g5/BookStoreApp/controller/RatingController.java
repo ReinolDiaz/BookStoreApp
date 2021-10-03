@@ -35,12 +35,12 @@ public class RatingController {
         return ResponseEntity.ok(ratingService.getAllRatings());
     }
 
-    @GetMapping("/{userid}")
+    @GetMapping("/byuser/{userid}")
     public ResponseEntity<List<Rating>> getRatingsByUser(@PathVariable String userid) {
         return ResponseEntity.ok(ratingService.getRatingsByUser(userid));
     }
 
-    @GetMapping("/{bookid}")
+    @GetMapping("/bybook/{bookid}")
     public ResponseEntity<List<Rating>> getRatingsByBook(@PathVariable String bookid) {
         return ResponseEntity.ok(ratingService.getRatingsByBook(bookid));
     }

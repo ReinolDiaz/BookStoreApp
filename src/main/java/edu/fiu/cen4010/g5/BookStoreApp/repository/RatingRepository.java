@@ -10,12 +10,12 @@ import java.util.Optional;
 public interface RatingRepository extends MongoRepository<Rating, String> {
 
     @Query("{'userid': ?0}, 'bookid': ?1}")
-    Optional<Rating> findByUserIdAndBookId(String userId, String bookId);
+    Optional<Rating> findByUserIdAndBookId(String userid, String bookid);
 
     @Query("{'userid': ?0}")
-    Optional<List<Rating>> findByUserId(String userId);
+    Optional<List<Rating>> findByUserId(String userid);
 
     @Query("{'bookid': ?0}")
-    Optional<List<Rating>> findByBookId(String bookId);
+    Optional<List<Rating>> findByBookId(String bookid);
 
 }

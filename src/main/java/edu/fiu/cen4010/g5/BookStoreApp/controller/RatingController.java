@@ -45,10 +45,20 @@ public class RatingController {
         return ResponseEntity.ok(ratingService.getRatingsByBook(bookid));
     }
 
+    @GetMapping("/bybook/sorted/highest/{bookid}")
+    public ResponseEntity<List<Rating>> getRatingsByBookSortedDes(@PathVariable String bookid) {
+        return ResponseEntity.ok(ratingService.getRatingsByBookSortedDes(bookid));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity deleteRating(@PathVariable String id) {
         ratingService.deleteRating(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @GetMapping("/avg/{bookid}")
+    public ResponseEntity getAverageRating(@PathVariable String bookid) {
+        return ResponseEntity.ok(ratingService.getAverageRating(bookid));
     }
 
 }

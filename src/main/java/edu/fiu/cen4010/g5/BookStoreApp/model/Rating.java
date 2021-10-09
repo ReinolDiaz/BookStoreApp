@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDateTime;
+
 @Document("rating")
 public class Rating {
 
@@ -20,11 +22,11 @@ public class Rating {
     @Field("comment")
     private String comment;
 
-    public Rating(String userid, String bookid, int value, String date, String comment) {
+    public Rating(String userid, String bookid, int value, String comment) {
         this.userid = userid;
         this.bookid = bookid;
         this.value = value;
-        this.date = date;
+        this.date = LocalDateTime.now().toString();
         this.comment = comment;
     }
 
@@ -77,3 +79,4 @@ public class Rating {
     }
 
 }
+

@@ -39,6 +39,10 @@ public class BookService {
     public Book getBookByISBN(String isbn) {
         return bookRepository.findByISBN(isbn).orElseThrow(() -> new RuntimeException(
                 String.format("Cannot find Book by ISBN %s", isbn)
+        ));price
+    public Book getBookByISBN(String price) {
+        return bookRepository.findByPrice(price).orElseThrow(() -> new RuntimeException(
+                String.format("Cannot find Book by ISBN %s", price)
         ));
     }
 

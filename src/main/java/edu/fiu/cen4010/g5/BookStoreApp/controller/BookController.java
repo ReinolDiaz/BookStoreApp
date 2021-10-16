@@ -39,6 +39,10 @@ public class BookController {
     public ResponseEntity<Book> getBookByISBN(@PathVariable String isbn) {
         return ResponseEntity.ok(bookService.getBookByISBN(isbn));
     }
+    @GetMapping("/{price}")
+    public ResponseEntity<Book> getBookByPrice(@PathVariable String price) {
+        return ResponseEntity.ok(bookService.getBookByPrice(price));
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteBook(@PathVariable String id) {
